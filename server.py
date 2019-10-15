@@ -116,7 +116,7 @@ class Server(object):
         received = b''
         while b'\n' not in received:
             received += self.client_connection.recv(32)
-        self.input_buffer = received.decode()
+        self.input_buffer = received.decode().strip()
 
 
     def move(self, argument):
